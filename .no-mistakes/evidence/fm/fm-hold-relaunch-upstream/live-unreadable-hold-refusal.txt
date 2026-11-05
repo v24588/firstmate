@@ -1,0 +1,14 @@
+# tasks-axi 'show' shadowed to fail (backlog unreadable); hold still active: external until 2099-01-01
+pane pid/cmd before: 260820 claude
+$ PATH=fakebin:$PATH fm-control.sh lab46fe92e4b088-worker relaunch --note 'recover validation'
+fm-captain-hold: error: backlog backend unavailable
+error: cannot verify task lab46fe92e4b088-worker's backlog hold before relaunch
+rc=1
+pane pid/cmd after: 260820 claude
+relaunch txn file: absent
+
+# Same with the hold cleared but backlog still unreadable (must still refuse, fail-closed)
+fm-captain-hold: error: backlog backend unavailable
+error: cannot verify task lab46fe92e4b088-worker's backlog hold before relaunch
+rc=1
+pane pid/cmd after: 260820 claude

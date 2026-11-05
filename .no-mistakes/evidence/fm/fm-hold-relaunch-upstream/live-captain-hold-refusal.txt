@@ -1,0 +1,28 @@
+## Lab: /tmp/fmlab.relhold256976  worker: lab46fe92e4b088-worker  (real claude worker on private tmux socket)
+$ fm-captain-hold.sh hold lab46fe92e4b088-worker --reason 'awaiting captain approval' --until 2099-11-02
+lab46fe92e4b088-worker
+rc=0
+$ tasks-axi show (hold fields)
+  state: in_flight
+  held: yes
+  hold_reason: "fm-hold-v1:YXdhaXRpbmcgY2FwdGFpbiBhcHByb3ZhbA=="
+  hold_kind: captain
+  hold_until: 2099-11-02
+pane pid/cmd before: 260820 claude
+$ fm-control.sh lab46fe92e4b088-worker relaunch --note 'recover after daemon restart'
+error: task lab46fe92e4b088-worker is captain-held; relaunch skipped before stopping the agent
+rc=1
+pane pid/cmd after: 260820 claude
+meta/brief unchanged: yes
+relaunch txn file: absent
+  held: yes
+  hold_kind: captain
+--- worker pane after ---
+  Ran 1 shell command
+● Paused. The gate file /tmp/fmlab.relhold256976/home/data/lab46fe92e4b088-worker/gate doesn't exist yet. I've logged a paused status line and created the branch fm/lab46fe92e4b088-worker. I haven't touched
+  notes/__init__.py or tests/test_notes.py. I'll wait for a resume message, then re-check the gate before implementing count_notes() and its test.
+✻ Cogitated for 11s · done 5:42 AM
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏵⏵ auto mode on (shift+tab to cycle) · ← 1 agent

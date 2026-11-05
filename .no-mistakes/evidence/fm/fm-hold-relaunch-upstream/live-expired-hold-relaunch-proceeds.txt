@@ -1,0 +1,26 @@
+$ fm-captain-hold.sh hold lab46fe92e4b088-worker --reason 'revisit later' --until 2000-01-01   (already expired)
+lab46fe92e4b088-worker
+rc=0
+  held: no
+  hold_kind: captain
+  hold_until: 2000-01-01
+pane pid/cmd before: 260820 claude
+$ fm-control.sh lab46fe92e4b088-worker relaunch --note 'recover after daemon restart'
+relaunched lab46fe92e4b088-worker harness=claude from=claude model=sonnet effort=low backend=tmux endpoint=firstmate:fm-lab46fe92e4b088-worker worktree=/tmp/fmlab.relhold256976/treehouse/.treehouse/notes-4328f3/1/notes
+rc=0
+pane pid/cmd after: 260820 claude
+--- worker pane after ---
+ ▐▛███▛█   Claude Code v2.1.318
+▝▜██████▀  Sonnet 5.5 with low effort · Claude Team
+ ▝▝   ▝▝   /tmp/fmlab.relhold256976/treehouse/.treehouse/notes-4328f3/1/notes
+❯ : Firstmate operational input waiting: read '/tmp/fmlab.relhold256976/home/state/operational-inbox/1793879345-f0c485ad6c37f263.msg' and handle its contents as Firstmate operational input.
+  Read 1 file, ran 1 shell command
+● The gate file /tmp/fmlab.relhold256976/home/data/lab46fe92e4b088-worker/gate doesn't exist yet. The steering inbox has no resume message either. I'm staying paused and haven't implemented count_notes().
+  The worktree is isolated and clean on fm/lab46fe92e4b088-worker. My earlier paused status line, naming that gate file, is still the latest one, so I haven't added another.
+  I'll resume once the gate file exists and a resume message arrives.
+✻ Baked for 9s · done 5:49 AM
+                                                                                                                         tmux detected · scroll with PgUp/PgDn · or add 'set -g mouse on' to ~/.tmux.conf for wheel scroll
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+❯ 
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  ⏵⏵ auto mode on (shift+tab to cycle) · ← 1 agent

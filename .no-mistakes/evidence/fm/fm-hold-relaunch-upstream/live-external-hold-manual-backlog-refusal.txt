@@ -1,0 +1,35 @@
+ok: unhold lab46fe92e4b088-worker -> cleared
+task:
+  id: lab46fe92e4b088-worker
+  title: lab gated worker
+  state: in_flight
+  blocked: no
+  blocked_by: none
+  held: no
+  hold_reason: "-"
+  hold_kind: "-"
+  hold_until: "-"
+  kind: ship
+  repo: notes
+  priority: "-"
+  created: 2026-11-05
+  closed: "-"
+  deps: none
+  links: none
+  body: "Captain hold set: 2026-11-05T11:48:25Z"
+help[1]:
+  - Run `tasks-axi ready --file=/tmp/fmlab.relhold256976/home/data/backlog.md` to see dispatchable work
+$ cat config/backlog-backend -> manual
+$ tasks-axi hold lab46fe92e4b088-worker --kind external --reason 'waiting on vendor fix' --until 2099-01-01
+  held: yes
+  hold_kind: external
+  hold_until: 2099-01-01
+captain-hold open (expect not an open captain call):
+rc=1
+pane pid/cmd before: 260820 claude
+$ fm-control.sh lab46fe92e4b088-worker relaunch --note 'recover after daemon restart'
+error: task lab46fe92e4b088-worker is external-held; relaunch skipped before stopping the agent
+rc=1
+pane pid/cmd after: 260820 claude
+meta/brief unchanged: yes
+relaunch txn file: absent
